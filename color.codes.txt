@@ -1,0 +1,5 @@
+yellow #f9fc11
+BLue #00c0ff
+Tumblr color #36465D
+Instagram color #E1306C
+Facebook color #4267b2

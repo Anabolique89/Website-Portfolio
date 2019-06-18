@@ -1,0 +1,422 @@
+/* CSS Variables */
+:root {
+    --primary: #221e3f;
+    --dark: #e1fe7d;
+    --light: #00c0ff;
+    --shadow: 0 1px 5px rgba(255, 174, 46, 0.8);
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    color: var(--dark);
+}
+
+body {
+    background-image: url("sitebg.jpg");
+    margin: 30px 50px;
+    line-height: 1.4;
+	
+}
+
+.btn {
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration:none;
+    border: 0;
+}
+
+img {
+    max-width: 110%;
+	width:auto;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+}
+
+/* Navigation */
+.main-nav ul{
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+}
+
+/* Top Container */
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        'showcase showcase top-box-a'
+        'showcase showcase top-box-b';
+}
+
+/* Showcase */
+.showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(Mypassioncollagell.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;  
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    
+}
+
+.showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--light);
+}
+
+.showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--light);}
+    
+/* Top Box */
+.top-box {
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.0rem;
+    
+    }
+
+.top-box .price {
+    font-size: 3rem;
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+}
+
+.top-box-b {
+    grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat (auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+    background-image: url("water-wallpapers-28099-5068566.jpg"), repeat;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+/*info*/
+.info {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+    
+}
+
+/* Portfolio */
+.portfolio {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 2rem;
+}
+
+.portfolio img {
+    width: 200%;
+    box-shadow: var(--shadow);
+}
+h1{
+    font-size: 1.7rem;
+    font-family: 'Forte', sans serif;
+    background: linear-gradient(to top, #f9fc11, #00c0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+    
+}
+/* Timeline */
+
+.timeline ul{
+    border-left: 4px solid #f9fc11;
+    border-radius: .8rem;
+    background-color: rgba(0,0,0,0.05);
+    margin: 0 auto;
+    position: relative;
+    padding: 5rem;
+    list-style: none;
+    text-align: center;
+    width: 70%;
+}
+
+.timeline h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: .3;
+    
+}
+
+.timeline .date{
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+	padding: 1rem;
+}
+.timeline .date:last-of-type{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .date::before,
+.timeline .date::after{
+    position:absolute;
+    display:block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.timeline .date::before{
+    content: attr(data-date);
+    left: -21rem;
+    text-align: right;
+    min-width: 12rem;
+    font-size: 1.5rem;
+}
+.timeline .date::after{
+    content: '';
+    box-shadow: 0 0 0 4px #00c0ff;
+    border-radius: 100%;
+    left: -8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #313534;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Media Queries */
+@media(max-width: 700px){
+    .top-container{
+        grid-template-areas:
+            'showcase showcase'
+            'top-box-a top-box-b';
+    
+}
+.showcase h1 {
+    font-size: 2.5rem;
+}
+
+    .main-nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+    
+    .info .btn {
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+}
+/* TO BE CHECKED */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.box{
+		position: center;
+		
+	}
+	.top-container{
+         grid-template-areas:
+            'showcase showcase'
+            'top-box-a top-box-b';
+    }
+} 
+
+@media (max-width: 500px){
+    .top-container {
+        grid-template-areas:
+            'showcase'
+            'top-box-a'
+            'top-box-b';
+    }
+}
+
+@media only screen and (min-width:400px) {
+.top-container{
+        grid-template-areas:
+            'showcase showcase'
+            'top-box-a top-box-b';} 
+}
+/*Start media queries*/
+
+@media screen and {max-width: 768px}{
+	.body{
+		background: url("images/sitebg2.jpg") no-repeat center fixed;
+		background-size: cover;
+	.top-container{
+        grid-template-areas:
+            'showcase showcase'
+            'top-box-a top-box-b';
+.box{
+		position: center;
+	}
+	.landing-text h1{
+		font-size: 15rem;
+	}
+	
+	.landing-text h6{
+		font-size: 1.7rem;
+	}
+	.nav-list{
+		flex-direction: column;
+	}
+	li{
+		margin: 2rem 0;
+	}
+	.nav-link{
+		font-size: 4.5rem;
+	}
+	.about-heading h1{
+		font-size: 8rem;
+	}
+	.section-heading h1{
+		font-size: 3rem;
+	}
+	.about-details .nav-list{
+		flex-direction: initial;
+	}
+	.about-details li{
+		margin: 0 2rem;
+	}
+	.icon-container{
+		width: 7rem;
+		height: 7rem;
+	}
+	.icon-container i{
+		font-size: 4rem;
+	}
+	.timeline ul{
+		margin: 0 0 0 auto;
+	}
+	.timeline .date::before{
+		left: -20rem;
+	}
+	.timeline .date::after{
+		left: -5.9rem;
+	}
+}
+
+@media screen and (max-width: 600px){
+	
+	.top-container{
+        grid-template-areas:
+            'showcase showcase'
+            'top-box-a top-box-b';
+	} 
+	.box{
+		position: center;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	.menu-toggler{
+		top: 2rem;
+		right: 2rem;
+	}
+	.landing-text h1{
+		font-size: 8rem;
+	}
+	.landing-text h6{
+		font-size: 1.4rem;
+	}
+	
+	.nav-link{
+		font-size: 3.5rem;
+	}
+	
+	.about .container{
+		flex-direction: column;
+	}
+	
+	.profile-img{
+		margin: 0 0 7rem 0;   
+	}
+	
+	.portfolio-item{
+		flex-direction: column;
+	}
+	.portfolio-img{
+		margin: 0 0 2rem 0;
+		order: 1;
+	}
+	
+	.portfolio-description{
+		margin: 0;
+		order: 2;
+	}
+	
+	.timeline p{
+		font-size: 1.6rem;
+	}
+	
+	.timeline .date::before{
+		font-size: 1.4rem;
+	}
+	form{
+		width: 100%;
+	}
+	.up{
+		right: 2rem;
+	}
+}
+
+
+
+
